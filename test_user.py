@@ -17,6 +17,7 @@ class TestUser(unittest.TestCase):
         self.new_user.save_user() 
         self.assertEqual(len(User.user_detail),1)
 
+    
        
 
 if __name__ == '__main__':
