@@ -5,7 +5,9 @@ class User:
 
     user_detail = [] # Empty user detail list
 
-    
+    def save_user(self):
+
+        User.user_detail.append(self) #Save user's info
 
     def __init__(self,email,password):
         
