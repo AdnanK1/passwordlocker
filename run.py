@@ -107,8 +107,11 @@ def main():
                     print(f"Password.......{find_name.password1}")
                 else:
                     print("That credential does not exist")
-            
-       
+            elif short_code == 'exit':
+                print('Thank you for using me, Bye')
+                break
+            else:
+                print('I didn\'t get that. Please use the right input')
         
 
 if __name__ == '__main__':
