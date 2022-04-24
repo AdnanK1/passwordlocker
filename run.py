@@ -4,8 +4,8 @@ from user import User
 from credentials import Credentials
 
 #Creating account
-def create_account(email,password):
-    new_account = User(email,password)
+def create_account(username,email,password):
+    new_account = User(username,email,password)
     return new_account
 
 #save account
@@ -38,7 +38,15 @@ def check_existing_credentials(name):
     return Credentials.credentials_exist(name)
 
 def main():
-    print
+    print('Welcome to Password Locker if its your first here type \'new\' if you are already a user type \'old\'')
+    user_input = input().lower()
+    print('\n')
+    if user_input == 'new':
+        print('New User')
+        print('-'*10)
+
+        print('Please enter username')
+
 
 if __name__ == '__main__':
 
