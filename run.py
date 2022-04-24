@@ -29,7 +29,17 @@ def del_credential(credentials):
 def display_credentials():
     return Credentials.display_credential()
 
-#
+#find credentials
+def find_credential(name):
+    return Credentials.find_by_name(name)
+
+#check if credentials exist
+def check_existing_credentials(name):
+    return Credentials.credentials_exist(name)
+
+def main():
+    print
+
 if __name__ == '__main__':
 
     main()
