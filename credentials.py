@@ -13,7 +13,12 @@ class Credentials:
         Credentials.credential_details.remove(self)
 
     @classmethod
-    def 
+    def credentials_exist(cls,name):
+        for credentials in cls.credential_details:
+            if credentials.name == name:
+                return True
+
+        return False
 
    
     def __init__(self,name,email,password):
