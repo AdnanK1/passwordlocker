@@ -14,8 +14,8 @@ def save_account(user):
     user.save_user()
 
 #Create credential
-def create_credential(name,email,password1):
-    new_credential = Credentials(name,email,password1)
+def create_credential(name,email1,password1):
+    new_credential = Credentials(name,email1,password1)
     return new_credential
 
 #save credential
@@ -66,7 +66,7 @@ def main():
                 name = input()
 
                 print('Enter email used by the application ...')
-                email
+                email1 = input()
 
                 print('Would you like to write your own password \'(write)\' or auto generated \'(auto)\' ')
                 password_input = input().lower()
@@ -81,6 +81,8 @@ def main():
                         for x in range(0,password1_len):
                            password_char = random.choice(characters)
                            password1 = password_char
+
+                save_credential(create_credential(name,email1,password1)) # saved credential      
                          
 
 
