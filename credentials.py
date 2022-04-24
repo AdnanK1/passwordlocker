@@ -1,9 +1,7 @@
-from curses.ascii import CR
-
 class Credentials:
     
     credential_details = [] #empty credential_details list
-    characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%&*()/'
+    
 
     def save_credentials(self):
 
@@ -31,8 +29,8 @@ class Credentials:
         return cls.credential_details
 
    
-    def __init__(self,name,email,password):
+    def __init__(self,name,email1,password1):
         # docstring removed for simplicity
         self.name = name
-        self.email = email
-        self.password = password
+        self.email1 = email1
+        self.password1 = password1

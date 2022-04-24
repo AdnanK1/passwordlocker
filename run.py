@@ -2,6 +2,7 @@
 
 from user import User
 from credentials import Credentials
+import random
 
 #Creating account
 def create_account(email,password):
@@ -13,8 +14,8 @@ def save_account(user):
     user.save_user()
 
 #Create credential
-def create_credential(name,email,password):
-    new_credential = Credentials(name,email,password)
+def create_credential(name,email,password1):
+    new_credential = Credentials(name,email,password1)
     return new_credential
 
 #save credential
@@ -39,11 +40,11 @@ def check_existing_credentials(name):
 
 def main():
         print('Welcome to Password Locker. How may we call you?')
-        user_name = input().lower()
+        user_name = input().capitalize()
         print(f'Hello {user_name}. What would you like to do?')
         print('\n')
         while True:
-            print('Use the following to access the following: create an account -new, create password-newp, display credentials-dc,find credential-fc,exit-exit')
+            print('Use the following to access the following: create an account \'new\', create password \'newp\', display credentials \'dc\', find credential \'fc\', exit \'exit\'')
             short_code = input().lower()
 
             if short_code == 'new':
@@ -63,12 +64,28 @@ def main():
             elif short_code == 'newp':
                 print('Please enter application i.e. \'Skype\'')
                 name = input()
-                print('Would you like to write your own password ')
+
+                print('Enter email used by the application ...')
+                email
+
+                print('Would you like to write your own password \'(write)\' or auto generated \'(auto)\' ')
+                password_input = input().lower()
+                if password_input == 'write':
+                    print('Type password here ...')
+                    password1 = input()
+                else:
+                    characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%&*()/'
+                    while 1:
+                        print('What length would you like: ...')
+                        password1_len = int(input())
+                        for x in range(0,password1_len):
+                           password_char = random.choice(characters)
+                           password1 = password_char
+                         
+
 
        
         
-
-
 
 if __name__ == '__main__':
 
