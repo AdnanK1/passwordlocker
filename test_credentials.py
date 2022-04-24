@@ -13,3 +13,7 @@ class TestCredentials(unittest.TestCase):
         self.assertEqual(self.credential_details.name, 'Instagram')
         self.assertEqual(self.credential_details.email,'kibe@gmail.com')
         self.assertEqual(self.credential_details.password,'273904')
+
+    def test_save_credentials(self):
+        self.credential_details.save_credentials()
+        self.assertEqual(len(Credentials.credential_details),1)
