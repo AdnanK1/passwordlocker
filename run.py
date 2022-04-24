@@ -4,8 +4,8 @@ from user import User
 from credentials import Credentials
 
 #Creating account
-def create_account(username,email,password):
-    new_account = User(username,email,password)
+def create_account(email,password):
+    new_account = User(email,password)
     return new_account
 
 #save account
@@ -38,30 +38,35 @@ def check_existing_credentials(name):
     return Credentials.credentials_exist(name)
 
 def main():
-    while True:
-        print('Welcome to Password Locker if its your first here type \'new\' if you are already a user type \'old\'')
-        user_input = input().lower()
+        print('Welcome to Password Locker. How may we call you?')
+        user_name = input().lower()
+        print(f'Hello {user_name}. What would you like to do?')
         print('\n')
-        if user_input == 'new':
-            print('New User')
-            print('-'*10)
+        while True:
+            print('Use the following to access the following: create an account -new, create password-newp, display credentials-dc,find credential-fc,exit-exit')
+            short_code = input().lower()
 
-            print('Please enter username ...')
-            username = input()
+            if short_code == 'new':
+                print('New User')
+                print('-'*10)
 
-            print('Enter email ...')
-            email = input()
+                print('Enter email ...')
+                email = input()
 
-            print('Enter password here ...')
-            password = input()
+                print('Enter password here ...')
+                password = input()
 
-            save_account(create_account(username,email,password))#created and saved the new user
-            print('\n')
-            print(f'Welcome {username} to Password Locker')
+                save_account(create_account(email,password))#created and saved the new user
+                print('\n')
+                print('New user has been updated')
+            
+            elif short_code == 'newp':
+                print('Please enter application i.e. \'Skype\'')
+                name = input()
+                print('Would you like to write your own password ')
 
-        else:
-            print('')
-
+       
+        
 
 
 

@@ -9,9 +9,8 @@ class User:
 
         User.user_detail.append(self) #Save user's info
 
-    def __init__(self,username,email,password):
+    def __init__(self,email,password):
         
         # docstring removed for simplicity
-    self.username = username
         self.email = email
         self.password = password
