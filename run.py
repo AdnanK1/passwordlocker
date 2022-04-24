@@ -83,7 +83,20 @@ def main():
                            password1 = password_char
 
                 save_credential(create_credential(name,email1,password1)) # saved credential      
-                         
+            
+            elif short_code == 'dc':
+                if display_credentials():
+                    print('Here is the list of all your credentials')
+                    print('-'*25)
+                    print('\n')
+                    for credentials in display_credentials:
+                        print(f'{credentials.name}{credentials.email1}{credentials.password1}')
+                        print('\n')
+                else:
+                    print('\n')
+                    print('You seem not to have any credentials saved yet')
+                    print('\n')
+
 
 
        
