@@ -38,14 +38,31 @@ def check_existing_credentials(name):
     return Credentials.credentials_exist(name)
 
 def main():
-    print('Welcome to Password Locker if its your first here type \'new\' if you are already a user type \'old\'')
-    user_input = input().lower()
-    print('\n')
-    if user_input == 'new':
-        print('New User')
-        print('-'*10)
+    while True:
+        print('Welcome to Password Locker if its your first here type \'new\' if you are already a user type \'old\'')
+        user_input = input().lower()
+        print('\n')
+        if user_input == 'new':
+            print('New User')
+            print('-'*10)
 
-        print('Please enter username')
+            print('Please enter username ...')
+            username = input()
+
+            print('Enter email ...')
+            email = input()
+
+            print('Enter password here ...')
+            password = input()
+
+            save_account(create_account(username,email,password))#created and saved the new user
+            print('\n')
+            print(f'Welcome {username} to Password Locker')
+
+        else:
+            print('')
+
+
 
 
 if __name__ == '__main__':
