@@ -20,6 +20,16 @@ class Credentials:
 
         return False
 
+    @classmethod
+    def find_by_name(cls,name):
+        for credentials in cls.credential_details:
+            if credentials.name == name:
+                return credentials
+
+    @classmethod
+    def display_credential(cls):
+        return cls.credential_details
+
    
     def __init__(self,name,email,password):
         # docstring removed for simplicity

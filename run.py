@@ -25,6 +25,11 @@ def save_credential(credentials):
 def del_credential(credentials):
     credentials.delete_credentials()
 
+#display credentials
+def display_credentials():
+    return Credentials.display_credential()
+
+#
 if __name__ == '__main__':
 
     main()
