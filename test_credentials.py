@@ -17,3 +17,10 @@ class TestCredentials(unittest.TestCase):
     def test_save_credentials(self):
         self.credential_details.save_credentials()
         self.assertEqual(len(Credentials.credential_details),1)
+
+    def test_save_multiple_contact(self):
+        self.credential_details.save_credentials()
+        test_credential = Credentials('Facebook','kibe@gmail', '546894')
+
+if __name__ == '__main__':
+    unittest.main()
