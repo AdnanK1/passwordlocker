@@ -97,8 +97,17 @@ def main():
                     print('You seem not to have any credentials saved yet')
                     print('\n')
 
-
-
+            elif short_code == 'fc':
+                print('Enter the name of the application you are search:')
+                find_name = input()
+                print('-' * 20)
+                if check_existing_credentials(find_name):
+                    find_name = find_credential(find_name)
+                    print(f"Email.......{find_name.email1}")
+                    print(f"Password.......{find_name.password1}")
+                else:
+                    print("That credential does not exist")
+            
        
         
 
