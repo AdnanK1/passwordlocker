@@ -20,7 +20,7 @@ def create_credential(name,email1,password1):
 
 #save credential
 def save_credential(credentials):
-    credentials.save_credential()
+    credentials.save_credentials()
 
 #delete credential
 def del_credential(credentials):
@@ -68,7 +68,7 @@ def main():
                 print('Enter email used by the application ...')
                 email1 = input()
 
-                print('Would you like to write your own password \'(write)\' or auto generated \'(auto)\' ')
+                print('Would you like to write your own password \'(type -> write)\' or auto generated \'(type -> auto)\' ')
                 password_input = input().lower()
                 if password_input == 'write':
                     print('Type password here ...')
@@ -81,8 +81,10 @@ def main():
                         for x in range(0,password1_len):
                            password_char = random.choice(characters)
                            password1 = password_char
-
-                save_credential(create_credential(name,email1,password1)) # saved credential      
+                           
+                save_credential(create_credential(name,email1,password1)) # saved credential
+                print('\n')
+                print('Credentials have been added')      
             
             elif short_code == 'dc':
                 if display_credentials():
