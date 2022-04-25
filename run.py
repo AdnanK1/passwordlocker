@@ -44,7 +44,7 @@ def main():
         print(f'Hello {user_name}. What would you like to do?')
         print('\n')
         while True:
-            print('Use the following to access the following: create an account \'new\', create password \'newp\', display credentials \'dc\', find credential \'fc\', exit \'exit\'')
+            print('Use the following to access the following: create an account \'new\', add credential \'add\', display credentials \'dc\', find credential \'fc\', exit \'exit\'')
             short_code = input().lower()
 
             if short_code == 'new':
@@ -61,7 +61,7 @@ def main():
                 print('\n')
                 print('New user has been updated')
             
-            elif short_code == 'newp':
+            elif short_code == 'add':
                 print('Please enter application i.e. \'Skype\'')
                 name = input()
 
@@ -91,8 +91,8 @@ def main():
                     print('Here is the list of all your credentials')
                     print('-'*25)
                     print('\n')
-                    for credentials in display_credentials:
-                        print(f'{credentials.name}{credentials.email1}{credentials.password1}')
+                    for credentials in display_credentials():
+                        print(f'{credentials.name}  {credentials.email1}  {credentials.password1}')
                         print('\n')
                 else:
                     print('\n')
